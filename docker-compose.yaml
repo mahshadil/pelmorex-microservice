@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  client:
+    build: 
+      context: ./client
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_WEATHER_API_HOST=https://weatherapi.pelmorex.com/v1
+      - REACT_APP_SERVER_HOST=http://localhost:8080
+    depends_on:
+      - server
+  server:
+    build: 
+      context: ./server
+    ports:
+      - "8080:8080"
+    environment:
+      - USER=postgres
+      - HOST_URL=db
+      - DATABASE=postgres
+      - PASSWORD=password
+      - DB_PORT=5432  
+    depends_on:
+      - db
+  db:
+    image: postgres:12
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

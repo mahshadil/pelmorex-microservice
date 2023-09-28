@@ -1,0 +1,14 @@
+# Log files
+*.log
+
+# Node.js module cache
+node_modules/
+
+# Environment secrets
+.env
+
+# Development tools
+*.md
+*.txt
+Dockerfile
+docker-compose.yml

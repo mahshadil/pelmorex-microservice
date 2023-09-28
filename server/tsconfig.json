@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES2019", // Target ECMAScript version
+    "module": "CommonJS", // Specify module code generation: 'None', 'CommonJS', 'AMD', 'System', 'UMD', 'ES6', 'ES2015', 'ES2020', or 'ESNext'
+    "moduleResolution": "node", // How module names are resolved: 'node' for Node.js/io.js style resolution, or 'classic'
+    "strict": true, // Enable all strict type-checking options
+    "esModuleInterop": true, // Allows default imports from modules with no default export
+    "skipLibCheck": true, // Skip type checking of declaration files
+    "forceConsistentCasingInFileNames": true, // Disallow inconsistently-cased references to the same file
+    "outDir": "./dist", // Output directory for compiled files
+    "rootDir": "./src", // Root directory of input files
+    "resolveJsonModule": true, // Allow JSON imports
+    "lib": [
+      "ES2019",
+      "DOM"
+    ], // Specify library files to be included in the compilation
+    "removeComments": true, // Remove comments from output files
+    "sourceMap": true // Generate source maps
+  },
+  "include": [
+    "src/**/*.ts" // Files to be compiled
+, "src/cronTask.js"  ],
+  "exclude": [
+    "node_modules" // Exclude node_modules from compilation
+  ]
+}
